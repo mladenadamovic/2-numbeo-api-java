@@ -76,6 +76,14 @@ public class NumbeoApiService {
                 "&api_key=" + apiKey;
 
         String jsonResponse = makeHttpGetRequest(urlString);
+
+        // Debug: Print raw JSON response (can be disabled in production)
+        if (System.getProperty("numbeo.debug") != null) {
+            System.out.println("DEBUG - Raw JSON Response:");
+            System.out.println(jsonResponse);
+            System.out.println();
+        }
+
         return gson.fromJson(jsonResponse, CityPricesResponse.class);
     }
 

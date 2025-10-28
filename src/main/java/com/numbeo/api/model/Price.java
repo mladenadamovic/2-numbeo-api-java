@@ -18,16 +18,16 @@ public class Price {
     @SerializedName("category_name")
     private String categoryName;
 
-    @SerializedName("min_value")
+    @SerializedName(value = "lowest_price", alternate = {"min_value", "minValue", "min"})
     private Double minValue;
 
-    @SerializedName("max_value")
+    @SerializedName(value = "highest_price", alternate = {"max_value", "maxValue", "max"})
     private Double maxValue;
 
-    @SerializedName("average_value")
+    @SerializedName(value = "average_price", alternate = {"average_value", "averageValue", "avg"})
     private Double averageValue;
 
-    @SerializedName("data_points")
+    @SerializedName(value = "data_points", alternate = {"dataPoints", "count"})
     private Integer dataPoints;
 
     public int getItemId() {
