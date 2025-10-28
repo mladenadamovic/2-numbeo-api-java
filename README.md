@@ -191,6 +191,16 @@ mvn clean package -DskipTests
 
 You can import this Maven project into your favorite IDE (IntelliJ IDEA, Eclipse, VS Code) and run the `NumbeoApiClient` class directly. Make sure to configure the program arguments in your run configuration.
 
+### Debug Mode
+
+To see the raw JSON response from the Numbeo API (useful for troubleshooting):
+
+```bash
+java -Dnumbeo.debug=true -jar target/numbeo-api-client-1.0.0-jar-with-dependencies.jar your_api_key "San Francisco, CA" "United States"
+```
+
+This will print the raw JSON response before parsing, which helps identify any field name mismatches.
+
 ## API Documentation
 
 For complete API documentation, visit:
