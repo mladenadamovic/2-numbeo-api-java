@@ -99,6 +99,9 @@ public class NumbeoApiClient {
         // Group prices by category
         Map<String, List<Price>> pricesByCategory = new LinkedHashMap<>();
         for (Price price : prices) {
+            if (price == null) {
+                continue;
+            }
             String categoryName = price.getCategoryName();
             pricesByCategory.computeIfAbsent(categoryName, k -> new ArrayList<>()).add(price);
         }
@@ -127,6 +130,10 @@ public class NumbeoApiClient {
      * @param prices       The list of prices in this category
      */
     private static void displayCategory(String categoryName, List<Price> prices) {
+        if (prices == null || prices.isEmpty()) {
+            return;
+        }
+
         System.out.println("-".repeat(80));
         System.out.println(categoryName != null ? categoryName.toUpperCase() : "UNKNOWN CATEGORY");
         System.out.println("-".repeat(80));
