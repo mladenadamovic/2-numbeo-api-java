@@ -15,7 +15,7 @@ public class Item {
     @SerializedName("category_id")
     private int categoryId;
 
-    @SerializedName("category_name")
+    @SerializedName(value = "category", alternate = {"category_name", "categoryName"})
     private String categoryName;
 
     public int getItemId() {

@@ -15,7 +15,7 @@ public class Price {
     @SerializedName("category_id")
     private int categoryId;
 
-    @SerializedName("category_name")
+    @SerializedName(value = "category", alternate = {"category_name", "categoryName"})
     private String categoryName;
 
     @SerializedName(value = "lowest_price", alternate = {"min_value", "minValue", "min"})
